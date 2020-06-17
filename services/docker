@@ -1,0 +1,41 @@
+#!/bin/bash
+
+run() {
+    echo "docker run -it \
+        --net='host' \
+        --name=$MR_APP \
+        -p $MR_PORT:$MR_PORT \
+        -d \
+        --restart=unless-stopped $MR_APP"
+}
+
+export $(egrep -v '^#' .env.dev | xargs)
+cp .env.dev .env
+
+if [ $1 == "deploy" ]
+    then
+        docker build -t $MR_APP .
+        docker stop $MR_APP
+        docker rm $MR_APP
+        eval $(run)
+fi
+
+if [ $1 == "stop" ]
+    then
+        docker stop $MR_APP
+fi
+
+if [ $1 == "exec" ]
+    then
+        docker exec -it $MR_APP $2
+fi
+
+if [ $1 == "start" ]
+    then
+        docker start $MR_APP
+fi
+
+if [ $1 == "logs" ]
+    then
+        docker logs -f $MR_APP
+fi

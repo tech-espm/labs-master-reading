@@ -1,0 +1,34 @@
+{
+  "name": "master-reading",
+  "version": "1.0.0",
+  "description": "Master Reading",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon boot.js",
+    "local": "node boot.js",
+    "deploy": "bash services/docker deploy",
+    "stop": "bash services/docker stop"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tech-espm/labs-master-reading.git"
+  },
+  "author": "Matheus Marques Polillo, Brenno Natal, Bruna Carolina Rodrigues",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tech-espm/labs-master-reading/issues"
+  },
+  "homepage": "https://github.com/tech-espm/labs-master-reading#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "knex": "^0.21.1",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

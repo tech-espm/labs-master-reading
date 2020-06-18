@@ -4,6 +4,8 @@ const express = require('express'),
     server = express(),
     version = require('../package.json').version;
 
+const auth = require('./api/middleware/auth');
+
 const homePage = require('./components/home');
 
 const Server = {

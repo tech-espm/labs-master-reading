@@ -1,3 +1,3 @@
 module.exports = (req, res) => {
-    res.render('../../web/view/home');
+    res.render('home/index', { layout: 'layout' });
 }

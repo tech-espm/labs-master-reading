@@ -8,7 +8,6 @@ const auth = require('./api/middleware/auth');
 
 const homePage = require('./components/home'),
     masterData = require('./api/components/master');
-const master = require('../services/sql/master');
 
 const Server = {
     port: process.env.MR_PORT,
@@ -22,6 +21,7 @@ const Server = {
         }));
         server.use(express.json());
         server.use(express.urlencoded({ extended: true }));
+        server.use(require('express-ejs-layouts'));
         server.use((req, res, next) => {
             res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
             res.header('Expires', '-1');

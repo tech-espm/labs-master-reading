@@ -32,8 +32,7 @@ const Server = {
 
     sets() {
         server.set('views', path.join(`${__dirname}/../web/view`));
-        server.engine('html', require('ejs').renderFile);
-        server.set('view engine', 'html');
+        server.set('view engine', 'ejs');
     },
 
     routes() {

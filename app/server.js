@@ -7,7 +7,7 @@ const express = require('express'),
 const auth = require('./api/middleware/auth');
 
 const homePage = require('./components/home'),
-    masterData = require('./api/components/master');
+    publicationData = require('./api/components/publication');
 
 const Server = {
     port: process.env.MR_PORT,
@@ -36,15 +36,15 @@ const Server = {
     },
 
     routes() {
-        server.all('/', homePage);
+        server.all('/', homePage.index);
 
         server.all('/api/ping', (req, res) => res.status(200).send('pong'));
         server.all('/api/version', (req, res) => res.status(200).send(version));
         server.post('/api/register', auth.register);
         server.post('/api/login', auth.login, (req, res) => res.status(200).send('ok'));
-        server.get('/api/master/getAll', auth.verify, masterData.getAll);
-        server.get('/api/master/get', auth.verify, masterData.getMaster);
-        server.post('/api/master/create', auth.verify, masterData.createMaster);
+        server.get('/api/publication/getAll', publicationData.getAll);
+        server.get('/api/publication/get', publicationData.getPublication);
+        server.post('/api/publication/create', auth.verify, publicationData.createPublication);
         
         server.use((req, res) => {
             res.status(404).send('Página não encontrada');

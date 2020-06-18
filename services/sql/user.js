@@ -9,9 +9,7 @@ const user = {
 
         await db('user')
             .select('*')
-            .where({
-                login: login
-            })
+            .where('login', login)
             .then(async (data) => {
                 await bcrypt.compare(password, data[0].password).then(same => {
                     if (same) result = data[0];

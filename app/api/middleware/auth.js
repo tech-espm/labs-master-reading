@@ -22,6 +22,7 @@ const auth = {
 
             let activeCookie = await User.signToken(user.id);
             res.cookie('session_cookie', activeCookie, { expires: new Date(Date.now() + 1800000) });
+            res.cookie('id', user.id, { expires: new Date(Date.now() + 1800000) });
             
             next();
         } catch (err) {
@@ -34,6 +35,8 @@ const auth = {
             let validate = await User.verifyToken(req.cookies.session_cookie);
 
             if (!validate) return res.status(401).send('Session expired, please log in again');
+            
+            if (req.cookies.id) return res.status(401).send('Session expired, please log in again');
 
             next();
         } catch (err) {

@@ -6,7 +6,8 @@ const express = require('express'),
 
 const auth = require('./api/middleware/auth');
 
-const homePage = require('./components/home');
+const homePage = require('./components/home'),
+    masterData = require('./api/components/master');
 
 const Server = {
     port: process.env.MR_PORT,

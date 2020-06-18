@@ -18,7 +18,6 @@ const Server = {
         }));
         server.use(express.json());
         server.use(express.urlencoded({ extended: true }));
-        // server.use(require('express-ejs-layouts'));
         server.use((req, res, next) => {
             res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
             res.header('Expires', '-1');
@@ -29,7 +28,8 @@ const Server = {
 
     sets() {
         server.set('views', path.join(`${__dirname}/../web/view`));
-        server.set('view engine', 'ejs');
+        server.engine('html', require('ejs').renderFile);
+        server.set('view engine', 'html');
     },
 
     routes() {

@@ -1,0 +1,22 @@
+@import url("fonts.css");
+@import url("home.css");
+
+body {
+  background: #dee3e7;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 1118px;
+}
+
+.wrapper > article { padding: 0 45px; }
+
+.orange-bar { 
+  background-color: #fb595e;
+  position: relative;
+}

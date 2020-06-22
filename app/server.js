@@ -7,6 +7,7 @@ const express = require('express'),
 const auth = require('./api/middleware/auth');
 
 const homePage = require('./components/home'),
+    passwordPage = require('./components/password'),
     publicationData = require('./api/components/publication');
 
 const Server = {
@@ -41,6 +42,9 @@ const Server = {
         server.all('/api/ping', (req, res) => res.status(200).send('pong'));
         server.all('/api/version', (req, res) => res.status(200).send(version));
         server.post('/api/register', auth.register);
+        server.post('/api/forgot', auth.forgot);
+        server.get('/reset', passwordPage.reset);
+        server.post('/api/changePass', auth.changePass);
         server.post('/api/login', auth.login, (req, res) => res.status(200).send('ok'));
         server.get('/api/publication/getAll', publicationData.getAll);
         server.get('/api/publication/get', publicationData.getPublication);

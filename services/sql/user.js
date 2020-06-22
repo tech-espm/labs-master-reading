@@ -19,6 +19,19 @@ const user = {
         return result
     },
 
+    async getId(login) {
+        let result = '';
+
+        await db('user')
+            .select('id')
+            .where('login', login)
+            .then((data) => {
+                result = data
+            });
+
+        return result
+    },
+
     async createUser(body) {
         let result = '';
 
@@ -40,9 +53,32 @@ const user = {
         return result
     },
 
-    async signToken(id) {
+    async changePassword(id, password) {
+        let result = '';
+
+        bcrypt.hash(password, 10, async (err, hash) => {
+            if (err) return err
+
+            await db('user')
+                .update({
+                    password: hash
+                })
+                .where('id', id)
+                .then(() => {
+                    result = 'Password changed';
+                });
+        });
+
+        return result
+    },
+
+    async signToken(id, forgot = false) {
+        let ei = 1800;
+
+        if (forgot) ei = 300;
+
         let token = jwt.sign({ id }, process.env.TOKEN_SECRET, {
-            expiresIn: 1800 
+            expiresIn: ei
         });
 
         return token
@@ -51,10 +87,18 @@ const user = {
     async verifyToken(token) {
         let result = '';
 
-        await jwt.verify(token, process.env.TOKEN_SECRET, (err, decoded) => {
+        jwt.verify(token, process.env.TOKEN_SECRET, (err, decoded) => {
             if (err || !decoded) result = false;
             result = true;
         });
+
+        return result
+    },
+
+    async decodeToken(token) {
+        let result = '';
+
+        result = jwt.decode(token);
 
         return result
     }

@@ -52,7 +52,7 @@ SECTION MIDDLE
   left: 0;
   position: absolute;
   top: -65px;
-  width: 845px;
+  width: 1000px;
 }
 
 .orange-bar p {
@@ -148,4 +148,72 @@ section ul li a {
 
 footer {
   padding-top: 30px;
+}
+
+/**********************************************************
+VERTICAL BANNER
+**********************************************************/
+
+.vertical-banner {
+  width: 371px;
+  position: absolute;
+  right: 58px;
+  top: 100px;
+  z-index: 1;
+  box-shadow: -2px 5px 10px -2px rgba(0, 0, 0, 0.4);
+  background: #dee3e7;
+}
+
+.vertical-banner article {
+  padding: 50px 35px;
+  text-align: left;
+}
+
+.vertical-banner article img {
+  width: 230px;
+  height: 230px;
+  border-radius: 150px;
+  display: block;
+  margin: 0 auto;
+}
+
+.vertical-banner div p {
+  margin-top: 34px;
+}
+
+.vertical-banner article p:nth-child(2) {
+  color: #581a6e;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.8;
+}
+
+.vertical-banner article p:nth-child(3) {
+  color: #581a6e;
+  font-size: 23px;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.p-relative {
+  position: relative;
+}
+
+.vertical-banner .arrow {
+  background-image: url(../images/arrow.png);
+  display: inline-block;
+  height: 51px;
+  width: 51px;
+  position: absolute;
+  top: 150px;
+}
+
+.vertical-banner .arrow.left {
+  background-position: left center;
+  left: 45px;
+}
+
+.vertical-banner .arrow.right {
+  background-position: right center;
+  right: 45px;
 }

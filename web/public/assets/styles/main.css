@@ -20,3 +20,7 @@ body {
   background-color: #fb595e;
   position: relative;
 }
+
+.d-none {
+  display: none;
+}

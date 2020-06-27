@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+</head>
+
+<body>
+    <h1>Login</h1>
+    <label for="master">Login</label><br>
+    <input type="text" name="username" class="username"><br><br>
+    <label for="master">Senha</label><br>
+    <input type="password" name="password" class="password"><br><br>
+    <input type="submit" class="login" value="Login">
+
+    <script>
+        $(document).ready(() => {
+            $('.login').click(() => {
+                let username = $('.username').val();
+                let password = $('.password').val();
+                let basicAuth = btoa(`${username}:${password}`);
+
+                $.ajax({
+                    method: 'POST',
+                    url: '/api/login',
+                    headers: {
+                        'Authorization': `Basic ${basicAuth}`
+                    }
+                }).then(result => {
+                    console.log(result);
+                })
+            });
+        });
+    </script>
+</body>
+
+</html>

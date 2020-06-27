@@ -17,9 +17,8 @@ const publication = {
         let result = '';
 
         await db('publication')
-            .select('publication.*', 'user.name')
+            .select('publication')
             .where('publication.id', id)
-            .leftJoin('user', 'user.id', 'publication.user_id')
             .then((data) => {
                 result = data;
             });
@@ -27,12 +26,12 @@ const publication = {
         return result
     },
 
-    async createPublication(recommendation, user_id) {
+    async createPublication(recommendation, master) {
         let result = '';
 
         await db('publication')
             .insert({
-                user_id: user_id,
+                master: master,
                 recommendation: recommendation
             }).then((id) => {
                 result = id;
@@ -42,12 +41,9 @@ const publication = {
             .update({
                 picture: `${result[0]}.jpg`
             })
-            .where('id', result[0])
-            .then(() => {
-                result = 'Created';
-            });
+            .where('id', result[0]);
 
-        return result
+        return result[0]
     }
 }
 

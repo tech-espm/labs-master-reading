@@ -1,5 +1,8 @@
 const db = require('../../../services/sql/publication');
 
+const formidable = require('formidable'),
+    fs = require('fs');
+
 const publication = {
     async getAll(req, res) {
         let publications = await db.getAllPublications();
@@ -21,11 +24,17 @@ const publication = {
 
     async createPublication(req, res) {
         try {
-            if (!req.body.hasOwnProperty('recommendation') || req.body.recommendation == '') return res.status(400).send('Empty recommendation');
+            const form = new formidable.IncomingForm();
+            form.parse(req, async (err, fields, files) => {
+                let result = await db.createPublication(fields.recommendation, fields.master);
+                let originalPath = files.fileToUpload.path,
+                    path = `${__base}/web/public/assets/images/profile/${result}.png`;
+                fs.rename(originalPath, path, async (err) => {
+                    if (err) return res.status(500).send(err);
 
-            let publicationCreated = await db.createPublication(req.body.recommendation, req.cookies.id);
-
-            res.status(201).send(publicationCreated);
+                    res.status(200).send('ok');
+                });
+            });
         } catch (err) {
             res.status(500).send(err.message);
         }

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Register</title>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+</head>
+
+<body>
+    <h1>Registrar uma publicação</h1>
+    <label for="master">Mestre</label><br>
+    <input type="text" name="master" class="master"><br><br>
+    <label for="master">Recomendação</label><br>
+    <textarea name="recommendation" class="recommendation" maxlength="500"></textarea><br><br>
+    <input type="file" class="fileToUpload" name="fileToUpload" accept="image/png, image/jpeg"><br><br>
+    <input type="submit" class="send" value="Enviar">
+
+    <script>
+        $(document).ready(() => {
+            $('.send').click(() => {
+                let master = $('.master').val();
+                let recommendation = $('.recommendation').val();
+                let file = $('.fileToUpload')[0].files[0];
+                let body = new FormData();
+
+                body.append('master', master);
+                body.append('recommendation', recommendation);
+                body.append('fileToUpload', file);
+
+                $.ajax({
+                    method: 'POST',
+                    url: '/api/publication/create',
+                    data: body,
+                    contentType: false,
+                    processData: false
+                }).then(result => {
+                    console.log(result);
+                })
+            });
+        });
+    </script>
+</body>
+
+</html>

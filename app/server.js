@@ -7,9 +7,7 @@ const express = require('express'),
 const auth = require('./api/middleware/auth');
 
 const homePage = require('./components/home'),
-    passwordPage = require('./components/password'),
-    publicationData = require('./api/components/publication'),
-    uploadData = require('./api/components/upload');
+    publicationData = require('./api/components/publication');
 
 const Server = {
     port: process.env.MR_PORT,
@@ -39,20 +37,17 @@ const Server = {
 
     routes() {
         server.all('/', homePage.index);
-        server.get('/upload', homePage.upload);
         server.get('/admin', homePage.admin);
+        server.get('/register', homePage.register);
+        server.get('/login', homePage.login);
 
         server.all('/api/ping', (req, res) => res.status(200).send('pong'));
         server.all('/api/version', (req, res) => res.status(200).send(version));
-        server.post('/api/register', auth.register);
-        server.post('/api/forgot', auth.forgot);
-        server.get('/reset', passwordPage.reset);
-        server.post('/api/changePass', auth.changePass);
         server.post('/api/login', auth.login, (req, res) => res.status(200).send('ok'));
         server.get('/api/publication/getAll', publicationData.getAll);
         server.get('/api/publication/get', publicationData.getPublication);
         server.post('/api/publication/create', auth.verify, publicationData.createPublication);
-        server.post('/api/upload', uploadData.uploadFile);
+        server.post('/api/publication/create', publicationData.createPublication);
         
         server.use((req, res) => {
             res.status(404).send('Página não encontrada');

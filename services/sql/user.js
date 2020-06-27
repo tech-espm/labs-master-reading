@@ -89,7 +89,7 @@ const user = {
 
         jwt.verify(token, process.env.TOKEN_SECRET, (err, decoded) => {
             if (err || !decoded) result = false;
-            result = true;
+            else result = true;
         });
 
         return result

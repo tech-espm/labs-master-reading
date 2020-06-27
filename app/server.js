@@ -40,6 +40,7 @@ const Server = {
     routes() {
         server.all('/', homePage.index);
         server.get('/upload', homePage.upload);
+        server.get('/admin', homePage.admin);
 
         server.all('/api/ping', (req, res) => res.status(200).send('pong'));
         server.all('/api/version', (req, res) => res.status(200).send(version));

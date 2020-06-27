@@ -5,6 +5,10 @@ const home = {
 
     upload(req, res) {
         res.render('home/upload', { layout: 'layout' });
+    },
+
+    admin(req, res) {
+        res.render('home/dashboard', { layout: 'layout'});
     }
 }
 

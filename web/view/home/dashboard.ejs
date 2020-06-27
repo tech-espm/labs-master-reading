@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
+
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -9,159 +10,134 @@
 	<title>Leitura de Mestre</title>
 
 	<meta property="og:locale" content="pt_BR" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://academico.espm.br/leaderboard" />
-<meta property="og:title" content="Leaderboard ESPM" />
-<meta property="og:site_name" content="Leaderboard ESPM" />
-<meta property="og:description" content="Leaderboard ESPM" />
-<meta property="og:image" content="https://academico.espm.br/leaderboard/imagens/loginbg.jpg" />
-<meta property="og:image:type" content="image/jpeg" />
-<meta property="og:image:width" content="1920" />
-<meta property="og:image:height" content="1080" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://academico.espm.br/leitura-de-mestre" />
+	<meta property="og:title" content="Leitura de Mestre ESPM" />
+	<meta property="og:site_name" content="Leitura de Mestre ESPM" />
+	<meta property="og:description" content="Leitura de Mestre ESPM" />
+	<meta property="og:image" content="https://academico.espm.br/leaderboard/imagens/loginbg.jpg" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta property="og:image:width" content="1920" />
+	<meta property="og:image:height" content="1080" />
 
-<meta name="author" content="ESPM" />
-<meta name="description" content="Leaderboard ESPM" />
-<meta name="keywords" content="game, score, leaderboard, ranking, jogo, pontuação, recorde, ESPM, Tech" />
+	<meta name="author" content="ESPM" />
+	<meta name="description" content="Leitura de Mestre ESPM" />
+	<meta name="keywords" content="leitura, mestre, livro, ESPM, Tech" />
 
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-<meta name="apple-mobile-web-app-title" content="Leaderboard ESPM" />
-<!--
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="apple-mobile-web-app-title" content="Leitura de Mestre ESPM" />
+	<!--
 	https://w3c.github.io/manifest/#icon-masks
 	https://github.com/w3c/manifest/issues/555
 -->
-<meta name="msapplication-config" content="/favicons/browserconfig.xml" />
-<meta name="theme-color" content="#222222" />
+	<meta name="msapplication-config" content="/favicons/browserconfig.xml" />
+	<meta name="theme-color" content="#222222" />
 
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet" />
-<link rel="stylesheet" href="/lib/bootstrap/css/bootstrap-1.0.27.min.css" />
-<link rel="stylesheet" href="/lib/jquery-ui/css/jquery-ui-1.0.0.min.css" />
-<link rel="stylesheet" href="/lib/metis-menu/css/metis-menu-1.0.0.min.css" />
-<link rel="stylesheet" href="/lib/bootstrap-datepicker/css/bootstrap-datepicker-1.0.1.min.css" />
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome-1.0.2.min.css" />
-<link rel="stylesheet" href="/lib/data-tables/css/data-tables.bootstrap-1.0.7.css" />
-<link rel="stylesheet" href="assets/styles/admin.css" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet" />
+	<link rel="stylesheet" href="/lib/bootstrap/css/bootstrap-1.0.27.min.css" />
+	<link rel="stylesheet" href="/lib/jquery-ui/css/jquery-ui-1.0.0.min.css" />
+	<link rel="stylesheet" href="/lib/metis-menu/css/metis-menu-1.0.0.min.css" />
+	<link rel="stylesheet" href="/lib/bootstrap-datepicker/css/bootstrap-datepicker-1.0.1.min.css" />
+	<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome-1.0.2.min.css" />
+	<link rel="stylesheet" href="/lib/data-tables/css/data-tables.bootstrap-1.0.7.css" />
+	<link rel="stylesheet" href="assets/styles/admin.css" />
 
-<script type="text/javascript" src="/lib/jquery/js/jquery-1.0.1.min.js"></script>
-<script type="text/javascript" src="/lib/metis-menu/js/metis-menu-1.0.1.min.js"></script>
-<script type="text/javascript" src="/js/main.js"></script>
-<script type="text/javascript">
-	//<![CDATA[
-	"use strict";
-	Notification.pathBase = "/";
-	Notification.imagePath = "imagens";
+	<script type="text/javascript" src="/lib/jquery/js/jquery-1.0.1.min.js"></script>
+	<script type="text/javascript" src="/lib/metis-menu/js/metis-menu-1.0.1.min.js"></script>
+	<script type="text/javascript" src="/js/main.js"></script>
+	<script type="text/javascript">
+		//<![CDATA[
+		"use strict";
+		Notification.pathBase = "/";
+		Notification.imagePath = "imagens";
 	//]]>
-</script>
+	</script>
 
 
-	
-<style type="text/css">
-	.link {
-		word-wrap: break-word;
-		font-weight: bold;
-		font-family: Consolas, monospace;
-	}
+	<style type="text/css">
+		.link {
+			word-wrap: break-word;
+			font-weight: bold;
+			font-family: Consolas, monospace;
+		}
 
-	li {
-		list-style-position: inside;
-	}
+		li {
+			list-style-position: inside;
+		}
 
-	hr {
-		margin: 50px 0;
-	}
-</style>
+		hr {
+			margin: 50px 0;
+		}
+	</style>
 
 </head>
+
 <body>
 
 	<div id="sidebar-fake-bg" class="sidebar-fake-bg"></div>
-<nav class="navbar navbar-default navbar-static-top nav-shadow " role="navigation" style="margin-bottom: 0">
-	<div class="navbar-header">
-		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-			<span class="sr-only">Alterar menu</span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-		</button>
-		<a class="navbar-brand" href="/"><img alt="Logo" src="assets/images/logo-cabecalho.png" /></a>
-	</div>
-
-	<ul class="nav navbar-top-links navbar-right">
-		<li class="dropdown">
-			<a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-				<img class="profile-img" alt="Perfil" src="assets/images/user.png" width="40" height="40" />ADMIN <i class="fa fa-caret-down"></i>
-			</a>
-			<ul class="dropdown-menu dropdown-user">
-				<li>
-					<a href="/perfil"><i class="fa fa-user fa-fw"></i>Meu Perfil</a>
-				</li>
-				<li class="divider"></li>
-				<li>
-					<a href="/logout"><i class="fa fa-sign-out fa-fw"></i>Sair</a>
-				</li>
-			</ul>
-		</li>
-	</ul>
-
-	<div id="sidebar" class="sidebar" role="navigation">
-		<div id="navbar-collapse" class="sidebar-nav navbar-collapse collapse">
-			<ul class="nav" id="side-menu">
-				<li class="hidden-xs"><button id="btn-sidebar" type="button" class="btn btn-outline btn-default btn-sidebar" title="Ocultar Menu"><i class="fa fa-bars fa-fw fa-nomargin"></i></button></li>
-				<li class="sidebar-spacer"></li>
-
-				<li>
-					<!-- <a href="/" class="active"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a> -->
-					<a href="/admin"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
-				</li>
-
-				<li class="sidebar-spacer"></li>
-
-				<li>
-					<a href="#"><i class="fa fa-file-text-o fa-fw"></i>Publicações<span class="fa arrow"></span></a>
-					<ul class="nav nav-second-level collapse">
-
-						<li>
-							<a href="/publicacao/criar"><i class="fa fa-plus fa-fw"></i>Criar</a>
-						</li>
-
-						<li>
-							<a href="/publicacao/ordenar"><i class="fa fa-sort-amount-asc fa-fw"></i>Ordenar</a>
-						</li>
-
-						<li>
-							<a href="/publicacao/listar"><i class="fa fa-tasks fa-fw"></i>Gerenciar</a>
-						</li>
-
-					</ul>
-				</li>
-
-				
-
-				<li class="sidebar-spacer"></li>
-
-				<li>
-					<a href="#"><i class="fa fa-user fa-fw"></i>Usuários<span class="fa arrow"></span></a>
-					<ul class="nav nav-second-level collapse">
-
-						<li>
-							<a href="/usuario/criar"><i class="fa fa-plus fa-fw"></i>Criar</a>
-						</li>
-
-						<li>
-							<a href="/usuario/listar"><i class="fa fa-tasks fa-fw"></i>Gerenciar</a>
-						</li>
-
-					</ul>
-				</li>
-
-				
-
-				<li class="sidebar-spacer"></li>
-
-			</ul>
+	<nav class="navbar navbar-default navbar-static-top nav-shadow " role="navigation" style="margin-bottom: 0">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Alterar menu</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/"><img alt="Logo" src="assets/images/logo-cabecalho.png" /></a>
 		</div>
-	</div>
-</nav>
+
+		<ul class="nav navbar-top-links navbar-right">
+			<li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+					<img class="profile-img" alt="Perfil" src="assets/images/user.png" width="40" height="40" />ADMIN <i
+						class="fa fa-caret-down"></i>
+				</a>
+				<ul class="dropdown-menu dropdown-user">
+
+					<li>
+						<a href="/"><i class="fa fa-sign-out fa-fw"></i>Sair</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+
+		<div id="sidebar" class="sidebar" role="navigation">
+			<div id="navbar-collapse" class="sidebar-nav navbar-collapse collapse">
+				<ul class="nav" id="side-menu">
+					<li class="hidden-xs"><button id="btn-sidebar" type="button"
+							class="btn btn-outline btn-default btn-sidebar" title="Ocultar Menu"><i
+								class="fa fa-bars fa-fw fa-nomargin"></i></button></li>
+					<li class="sidebar-spacer"></li>
+
+					<li>
+						<!-- <a href="/" class="active"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a> -->
+						<a href="/admin"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
+					</li>
+
+					<li class="sidebar-spacer"></li>
+
+					<li>
+						<a href="#"><i class="fa fa-file-text-o fa-fw"></i>Publicações<span class="fa arrow"></span></a>
+						<ul class="nav nav-second-level collapse">
+
+							<li>
+								<a href="/publicacao/criar"><i class="fa fa-plus fa-fw"></i>Criar</a>
+							</li>
+
+							<li>
+								<a href="/publicacao/gerenciar"><i class="fa fa-tasks fa-fw"></i>Gerenciar</a>
+							</li>
+
+						</ul>
+					</li>
+
+					<li class="sidebar-spacer"></li>
+
+				</ul>
+			</div>
+		</div>
+	</nav>
 
 
 	<div id="page-wrapper">
@@ -171,173 +147,101 @@
 			</div>
 		</div>
 
-		
-<div class="row">
-	<div class="col-lg-12">
-		<div class="panel panel-body text-center">
-			<h2 class="no-margin-top">
-				Instruções
-			</h2>
 
-			<hr />
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-body text-center">
+					<h2 class="no-margin-top">
+						Instruções
+					</h2>
 
-			<h2>
-				Passo 1: Fazer login do jogador
-			</h2>
-			
-			<h3>
-				Opção 1
-			</h3>
-			<p>
-				Abrir o link <span class="link">https://academico.espm.br/jogos/jogador</span> em uma nova aba (o jogador precisará voltar para o jogo manualmente depois de ter efetuado o cadastro/login, mas não precisa recarregar a página do jogo).
-			</p>
-			<h3>
-				Opção 2
-			</h3>
-			<p>
-				Abrir o link <span class="link">https://academico.espm.br/jogos/jogador?callback=&lt;SITE DO JOGO&gt;</span> na mesma aba (depois de ter efetuado o cadastro/login, o jogador será redirecionado de volta à página do jogo, que será recarregada).
-			</p>
+					<hr />
 
-			<hr />
+					<h2>
+						Passo 1: Fazer login do jogador
+					</h2>
 
-			<h2>
-				Passo 2: Obter as informações do jogador
-			</h2>
-			<p>
-				Enviar uma requisição GET para <span class="link">https://academico.espm.br/jogos/api/jogador/cookie</span>, utilizando a API fetch ou AJAX, e esperar um objeto JSON de volta com as informações do jogador atualmente logado, ou null, caso não exista um jogador logado.
-			</p>
-			<p>
-				O objeto JSON vem da seguinte forma:
-				<br />
-				<span class="link">{"id":123,"email":"jogador@site.com","nome":"Nome do Jogador"}</span>
-			</p>
+					<h3>
+						Opção 1
+					</h3>
+					<p>
+						Abrir o link <span class="link">https://academico.espm.br/jogos/jogador</span> em uma nova aba
+						(o jogador precisará voltar para o jogo manualmente depois de ter efetuado o cadastro/login, mas
+						não precisa recarregar a página do jogo).
+					</p>
+					<h3>
+						Opção 2
+					</h3>
+					<p>
+						Abrir o link <span class="link">https://academico.espm.br/jogos/jogador?callback=&lt;SITE DO
+							JOGO&gt;</span> na mesma aba (depois de ter efetuado o cadastro/login, o jogador será
+						redirecionado de volta à página do jogo, que será recarregada).
+					</p>
 
-			<hr />
+					<hr />
 
-			<h2>
-				Passo 3: Enviar a pontuação final do jogador
-			</h2>
-			<p>
-				Enviar uma requisição GET para <span class="link">https://academico.espm.br/jogos/api/jogador/marcar?idjogador=www&idjogo=xxx&token=yyy&valor=zzz</span>, utilizando a API fetch ou AJAX, com as informações pedidas na query string, conforme explicado abaixo:
-			</p>
-			<ul>
-				<li><b>idjogador</b>: id do jogador, obtido no passo 2.</li>
-				<li><b>idjogo</b>: id do jogo, obtido do sistema.</li>
-				<li><b>token</b>: token de acesso, obtido do sistema.</li>
-				<li><b>valor</b>: pontuação/tempo a ser marcado (pode ser um número inteiro ou real).</li>
-			</ul>
+					<h2>
+						Passo 2: Obter as informações do jogador
+					</h2>
+					<p>
+						Enviar uma requisição GET para <span
+							class="link">https://academico.espm.br/jogos/api/jogador/cookie</span>, utilizando a API
+						fetch ou AJAX, e esperar um objeto JSON de volta com as informações do jogador atualmente
+						logado, ou null, caso não exista um jogador logado.
+					</p>
+					<p>
+						O objeto JSON vem da seguinte forma:
+						<br />
+						<span class="link">{"id":123,"email":"jogador@site.com","nome":"Nome do Jogador"}</span>
+					</p>
 
-			<hr />
+					<hr />
 
-			<h2>
-				Passo 4: Exibir a leaderboard do jogo
-			</h2>
-			<p>
-				Abrir o link <span class="link">https://academico.espm.br/jogos/jogo/&lt;ID DO JOGO&gt;</span> em uma nova aba.
-			</p>
+					<h2>
+						Passo 3: Enviar a pontuação final do jogador
+					</h2>
+					<p>
+						Enviar uma requisição GET para <span
+							class="link">https://academico.espm.br/jogos/api/jogador/marcar?idjogador=www&idjogo=xxx&token=yyy&valor=zzz</span>,
+						utilizando a API fetch ou AJAX, com as informações pedidas na query string, conforme explicado
+						abaixo:
+					</p>
+					<ul>
+						<li><b>idjogador</b>: id do jogador, obtido no passo 2.</li>
+						<li><b>idjogo</b>: id do jogo, obtido do sistema.</li>
+						<li><b>token</b>: token de acesso, obtido do sistema.</li>
+						<li><b>valor</b>: pontuação/tempo a ser marcado (pode ser um número inteiro ou real).</li>
+					</ul>
+
+					<hr />
+
+					<h2>
+						Passo 4: Exibir a leaderboard do jogo
+					</h2>
+					<p>
+						Abrir o link <span class="link">https://academico.espm.br/jogos/jogo/&lt;ID DO JOGO&gt;</span>
+						em uma nova aba.
+					</p>
+				</div>
+
+				<div class="row">
+
+				</div>
+
+			</div>
 		</div>
-		<style type="text/css">
-	.jogo {
-		position: relative;
-		overflow: hidden;
-		margin: 0 0 75px;
-		padding: 0;
-		height: 300px;
-		color: #fff;
-		background-color: #000;
-		background-size: cover;
-		background-position: center;
-		border-radius: 4px;
-		-webkit-box-shadow: 0 1px 3px rgba(0,0,0,.5);
-		box-shadow: 0 1px 3px rgba(0,0,0,.5);
-		cursor: pointer;
-	}
-
-		.jogo > h2, .jogo > nav {
-			margin: 0;
-			background: rgba(0,0,0,.85);
-		}
-
-		.jogo > h2 {
-			padding: 0;
-			text-align: center;
-			font-weight: 400;
-			font-family: Montserrat, "Open Sans", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
-			font-size: 25px;
-			-webkit-box-shadow: 0 1px 4px #000;
-			box-shadow: 0 1px 4px #000;
-		}
-
-			.jogo > h2 > a {
-				display: block;
-				margin: 0;
-				padding: 8px 16px;
-				color: #fff;
-			}
-
-		.jogo > nav {
-			position: absolute;
-			padding: 8px 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			cursor: default;
-			-webkit-box-shadow: 0 -1px 4px #000;
-			box-shadow: 0 -1px 4px #000;
-		}
-
-			.jogo > nav > a {
-				color: #fff;
-				padding: 0 16px;
-				font-size: 20px;
-			}
-
-@media (max-width: 767px) {
-	.jogo {
-		margin-bottom: 50px;
-	}
-}
-
-@media (max-width: 500px) {
-	.jogo {
-		height: 250px;
-	}
-}
-
-@media (max-width: 400px) {
-	.jogo {
-		height: 200px;
-	}
-}
-</style>
-
-<div class="row">
-
-</div>
-
-<script type="text/javascript">
-	//<![CDATA[
-
-	//]]>
-</script>
-
-	</div>
-</div>
-
-
 
 	</div>
 
 	<script type="text/javascript" src="/lib/jquery-ui/js/jquery-ui-1.0.0.min.js"></script>
-<script type="text/javascript" src="/lib/jquery-mask/js/jquery-mask-1.0.0.min.js"></script>
-<script type="text/javascript" src="/lib/jquery-validate/js/jquery-validate-1.0.3.min.js"></script>
-<script type="text/javascript" src="/lib/jquery-validate/js/messages_pt_BR.min.js"></script>
-<script type="text/javascript" src="/lib/bootstrap/js/bootstrap-1.0.1.min.js"></script>
-<script type="text/javascript" src="/lib/bootstrap-datepicker/js/bootstrap-datepicker-1.0.6.min.js"></script>
-<script type="text/javascript" src="/lib/data-tables/js/data-tables-1.0.15.min.js"></script>
-<script type="text/javascript" src="js/admin.js"></script>
+	<script type="text/javascript" src="/lib/jquery-mask/js/jquery-mask-1.0.0.min.js"></script>
+	<script type="text/javascript" src="/lib/jquery-validate/js/jquery-validate-1.0.3.min.js"></script>
+	<script type="text/javascript" src="/lib/jquery-validate/js/messages_pt_BR.min.js"></script>
+	<script type="text/javascript" src="/lib/bootstrap/js/bootstrap-1.0.1.min.js"></script>
+	<script type="text/javascript" src="/lib/bootstrap-datepicker/js/bootstrap-datepicker-1.0.6.min.js"></script>
+	<script type="text/javascript" src="/lib/data-tables/js/data-tables-1.0.15.min.js"></script>
+	<script type="text/javascript" src="js/admin.js"></script>
 
-
-	
 </body>
+
 </html>

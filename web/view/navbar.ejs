@@ -1,0 +1,63 @@
+<div id="sidebar-fake-bg" class="sidebar-fake-bg"></div>
+    <nav class="navbar navbar-default navbar-static-top nav-shadow " role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Alterar menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><img alt="Logo" src="/assets/images/logo-cabecalho.png" /></a>
+        </div>
+
+        <ul class="nav navbar-top-links navbar-right">
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                    <img class="profile-img" alt="Perfil" src="/assets/images/user.png" width="40" height="40" />ADMIN <i
+                        class="fa fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+
+                    <li>
+                        <a href="/"><i class="fa fa-sign-out fa-fw"></i>Sair</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <div id="sidebar" class="sidebar" role="navigation">
+            <div id="navbar-collapse" class="sidebar-nav navbar-collapse collapse">
+                <ul class="nav" id="side-menu">
+                    <li class="hidden-xs"><button id="btn-sidebar" type="button"
+                            class="btn btn-outline btn-default btn-sidebar" title="Ocultar Menu"><i
+                                class="fa fa-bars fa-fw fa-nomargin"></i></button></li>
+                    <li class="sidebar-spacer"></li>
+
+                    <li>
+                        <!-- <a href="/" class="active"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a> -->
+                        <a href="/admin"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
+                    </li>
+
+                    <li class="sidebar-spacer"></li>
+
+                    <li>
+                        <a href="#"><i class="fa fa-file-text-o fa-fw"></i>Publicações<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+
+                            <li>
+                                <a href="/publicacao/criar"><i class="fa fa-plus fa-fw"></i>Criar</a>
+                            </li>
+
+                            <li>
+                                <a href="/publicacao/gerenciar"><i class="fa fa-tasks fa-fw"></i>Gerenciar</a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-spacer"></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>

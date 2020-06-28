@@ -16,16 +16,15 @@ const home = {
     },
 
     admin(req, res) {
-        res.render('home/dashboard', { layout: 'layout'});
+        res.render('home/dashboard', { layout: 'layoutAdmin'});
     },
+    
     create(req, res) {
-        res.render('publication/create', { layout: 'layout'});
+        res.render('publication/create', { layout: 'layoutAdmin'});
     },
-    order(req, res) {
-        res.render('publication/order', { layout: 'layout'});
-    },
+
     manage(req, res) {
-        res.render('publication/manage', { layout: 'layout'});
+        res.render('publication/manage', { layout: 'layoutAdmin'});
     }
 
     

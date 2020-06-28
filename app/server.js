@@ -41,7 +41,6 @@ const Server = {
         server.get('/register', homePage.register);
         server.get('/login', homePage.login);
         server.get('/publicacao/criar', homePage.create);
-        server.get('/publicacao/ordenar', homePage.order);
         server.get('/publicacao/gerenciar', homePage.manage);
 
         server.all('/api/ping', (req, res) => res.status(200).send('pong'));

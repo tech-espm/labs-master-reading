@@ -16,8 +16,18 @@ const home = {
     },
 
     admin(req, res) {
-        res.render('home/dashboard', { layout: 'layout'});
+        res.render('home/dashboard', { layout: 'layoutAdmin'});
+    },
+    
+    create(req, res) {
+        res.render('publication/create', { layout: 'layoutAdmin'});
+    },
+
+    manage(req, res) {
+        res.render('publication/manage', { layout: 'layoutAdmin'});
     }
+
+    
 }
 
 module.exports = home;

@@ -40,6 +40,8 @@ const Server = {
         server.get('/admin', homePage.admin);
         server.get('/register', homePage.register);
         server.get('/login', homePage.login);
+        server.get('/publicacao/criar', homePage.create);
+        server.get('/publicacao/gerenciar', homePage.manage);
 
         server.all('/api/ping', (req, res) => res.status(200).send('pong'));
         server.all('/api/version', (req, res) => res.status(200).send(version));

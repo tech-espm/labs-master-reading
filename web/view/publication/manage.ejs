@@ -41,15 +41,14 @@
         order: [[1, "asc"]],
         deferRender: true,
         columns: [
-            { title: "", "class": "col-min", searchable: false, orderable: false, data: null, render: function (v, type, row) { return "<a target=\"_blank\" title=\"Editar\" href=\"<%- root %>/jogo/alterar?id=" + row.id + "\" class=\"btn btn-outline btn-primary\"><i class=\"fa fa-nomargin fa-edit\"></i></a> <a target=\"_blank\" title=\"Leaderboard\" href=\"<%- root %>/jogo/" + row.id + "\" class=\"btn btn-outline btn-default\"><i class=\"fa fa-nomargin fa-trophy\"></i></a> <button title=\"Excluir\" type=\"button\" data-excluir=\"1\" class=\"btn btn-outline btn-danger\"><i class=\"fa fa-nomargin fa-times\"></i></button>"; } },
-            { title: "Id", "class": "col-min", "type": "num", data: "id" },
+            // { title: "", "class": "col-min", searchable: false, orderable: false, data: null, render: function (v, type, row) { return "<button title=\"Excluir\" type=\"button\" data-excluir=\"1\" class=\"btn btn-outline btn-danger\"><i class=\"fa fa-nomargin fa-times\"></i></button>"; } },
+            // { title: "Id", "class": "col-min", "type": "num", data: "id" },
             { title: "Mestre", render: encode, data: "master" },
-            { title: "Descrição", render: encode, data: "description" },
-            { title: "Imagem", "class": "text-center", searchable: false, orderable: false, data: null, render: function (v, type, row) { return "<a target=\"_blank\" title=\"Imagem do jogo\" href=\"<%- root %>/screenshots/" + row.id + ".jpg?" + row.versao + "\" class=\"btn btn-outline btn-default\"><i class=\"fa fa-nomargin fa-image\"></i></a>"; } },
-            { title: "Criação", "class": "col-min", "type": "customdateint", data: "data_cadastro" }
+            { title: "Recomendacão", render: encode, data: "recommendation" },
+            { title: "Imagem", "class": "text-center", searchable: false, orderable: false, data: null, render: function (v, type, row) { return "<a target=\"_blank\" title=\"Imagem do publication\" href=\"/web/public/assets/images/profile/" + row.id + ".jpg?" + row.versao + "\" class=\"btn btn-outline btn-default\"><i class=\"fa fa-nomargin fa-image\"></i></a>"; } },
         ],
-        data: '/api/',
-        export: { title: "Recomendacoes" }
+        data: "/api/publication/getAll",
+        export: { title: "publications" }
     });
 
     var trClicada;
@@ -58,10 +57,10 @@
         if (JsonWebApi.active)
             return;
 
-        var jogo = tabela.row(trClicada = this.parentNode.parentNode).data();
+        var publication = tabela.row(trClicada = this.parentNode.parentNode).data();
 
         if (this.getAttribute("data-excluir")) {
-            $("#lblNome").text(jogo.nome);
+            $("#lblNome").text(publication.master);
 
             $("#modalExcluir").modal({
                 backdrop: "static",
@@ -76,11 +75,11 @@
 
         $("#modalExcluir").modal("hide");
 
-        var jogo = tabela.row(trClicada).data();
+        var publication = tabela.row(trClicada).data();
 
         Notification.wait();
 
-        JsonWebApi.get("<%- root %>/api/jogo/excluir", function (response) {
+        JsonWebApi.get("/api/publication/excluir", function (response) {
             if (response.success) {
                 Notification.success("Recomendação excluída com sucesso! " + emoji.happy);
                 tabela.row(trClicada).remove().draw();
@@ -88,10 +87,8 @@
                 Notification.error(response.value, true);
             }
             trClicada = null;
-        }, "id", jogo.id);
+        }, "id", publication.id);
     }
 
         //]]>
 </script>
-
-

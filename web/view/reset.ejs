@@ -18,7 +18,7 @@
             let password = $('.password').val();
             $.ajax({
                 method: 'POST',
-                url: '/api/changePass',
+                url: '<%- root %>/api/changePass',
                 data: {
                     password: password
                 }

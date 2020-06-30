@@ -31,6 +31,9 @@ const Server = {
     },
 
     sets() {
+        server.locals = {
+            root: (process.env.ROOT || "")
+        };
         server.set('views', path.join(`${__dirname}/../web/view`));
         server.set('view engine', 'ejs');
     },

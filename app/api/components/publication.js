@@ -28,7 +28,7 @@ const publication = {
             form.parse(req, async (err, fields, files) => {
                 let result = await db.createPublication(fields.recommendation, fields.master);
                 let originalPath = files.fileToUpload.path,
-                    path = `${__base}/web/public/assets/images/profile/${result}.png`;
+                    path = `${__base}/web/public/assets/images/profile/${result}.jpg`;
                 fs.rename(originalPath, path, async (err) => {
                     if (err) return res.status(500).send(err);
 

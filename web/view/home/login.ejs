@@ -64,7 +64,7 @@ body {
 
                 $.ajax({
                     method: 'POST',
-                    url: '/api/login',
+                    url: '<%- root %>/api/login',
                     headers: {
                         'Authorization': `Basic ${basicAuth}`
                     }

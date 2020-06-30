@@ -79,7 +79,7 @@
 
         Notification.wait();
 
-        JsonWebApi.get("/api/publication/excluir", function (response) {
+        JsonWebApi.get("<%- root %>/api/publication/excluir", function (response) {
             if (response.success) {
                 Notification.success("Recomendação excluída com sucesso! " + emoji.happy);
                 tabela.row(trClicada).remove().draw();

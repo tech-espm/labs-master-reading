@@ -50,7 +50,6 @@ const Server = {
         server.get('/api/publication/get', publicationData.getPublication);
         server.post('/api/publication/create', auth.verify, publicationData.createPublication);
         server.post('/api/publication/create', publicationData.createPublication);
-        
         server.use((req, res) => {
             res.status(404).send('Página não encontrada');
         });
